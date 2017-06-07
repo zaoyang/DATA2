@@ -40,7 +40,7 @@ tmp = []
 for row in f:
     if i >14:
         break
-    print row
+    print(row)
     #tmp = []
     if (row[0] == prev):
         #tmp.append(['object-detection', row[0]])
@@ -57,8 +57,8 @@ for row in f:
         #print image_labels[i]
         if (i != 0):
             image_labels.append(tmp)
-            print image_labels
-            print type(tmp)
+            print(image_labels)
+            print(type(tmp))
             #time.sleep(1)
 
         i = i +1
@@ -98,7 +98,7 @@ image_labels = [pair[1] for pair in shuffle]
 
 #convert to numpy for saving
 images = np.asarray(images, dtype=np.uint8)
-image_labels = [np.array(i[1:]) for i in image_labels]# remove the file names
+image_labels = [np.array(i[1:], dtype=np.uint16) for i in image_labels]# remove the file names
 image_labels = np.array(image_labels)
 
 #save dataset
